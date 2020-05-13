@@ -140,7 +140,7 @@ stages:
       vmImage: 'ubuntu-16.04'
     variables:
       jmeterVersion: '5.2'
-    steps:
+    steps: 
     - script: |
         wget -c ftp.ps.pl/pub/apache/jmeter/binaries/apache-jmeter-$(jmeterVersion).tgz
         tar -xf apache-jmeter-$(jmeterVersion).tgz
@@ -154,5 +154,5 @@ stages:
       displayName: 'Transform JMeter output to JUnit'
     - task: PublishTestResults@2
       inputs:
-        testResultsFormat: Junit
-        testResultsFiles: Junit.xml
+        testResultsFormat: JUnit
+        testResultsFiles: JUnit.xml
